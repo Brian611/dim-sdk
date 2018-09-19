@@ -3,12 +3,13 @@ import helpers from '../crypto/cryptoHelpers'
 import keyPair from '../crypto/keyPair';
 import address from '../model/address';
 import cryptoHelpersFromNano from '../nano/CryptoHelpers';
+import convert from '../utils/convert';
 
 let createWallet = function (walletName, walletPassword, network, crypto) {
     return new Promise((resolve, reject) => {
 
         // Create random bytes
-        let r = dim.utils.convert.ua2hex(crypto ? crypto.secureRandomBytes(32) : nacl.randomBytes(32));
+        let r = convert.ua2hex(crypto ? crypto.secureRandomBytes(32) : nacl.randomBytes(32));
 
         // Derive private key from random bytes + entropy seed
         let privateKey = helpers.derivePassSha(r, 1000).priv;
