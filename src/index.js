@@ -25,6 +25,8 @@ import helpersFromNano from './nano/helpers';
 import languages from './nano/languages';
 import ntyFromNano from './nano/nty';
 
+import walletBuilder from './wallet/walletBuilder';
+
 export default {
 	crypto: {
 		keyPair: {
@@ -60,5 +62,8 @@ export default {
 		helpersFromNano,
 		languages,
 		ntyFromNano
+	},
+	wallet: {
+		walletBuilder
 	}
 };
